@@ -1,0 +1,21 @@
+.statistics {
+}
+
+.title {
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+
+  padding: 10px;
+
+  outline: 1px solid red;
+}
+
+.statList {
+  display: flex;
+  justify-content: space-between;
+}
