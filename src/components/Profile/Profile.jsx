@@ -6,7 +6,7 @@ export function Profile({ user }) {
         <p className="name">{user.username}</p>
         <p className="tag">{user.tag}</p>
         <p className="location">{user.location}</p>
-        <p className="location">{user1232}</p>
+        <p className="location">{user1233332}</p>
       </div>
 
       <ul className="stats">
