@@ -1,6 +1,7 @@
 import s from './Statistics.module.css';
 import PropTypes from 'prop-types';
-import StatisticsData from '../StatisticsData/StatisticsData';
+
+import randomColor from '../../utils/colorRandomizer';
 
 export default function Statistics({ stats, title }) {
   return (
@@ -9,8 +10,14 @@ export default function Statistics({ stats, title }) {
 
       <ul className={s.statList}>
         {stats.map(stat => (
-          <li className={s.item} key={stat.id}>
-            <StatisticsData label={stat.label} percentage={stat.percentage} />
+          <li
+            className={s.item}
+            style={{ backgroundColor: randomColor() }}
+            key={stat.id}
+          >
+            {/* <StatisticsData label={stat.label} percentage={stat.percentage} /> */}
+            <span className={s.label}>{stat.label}</span>
+            <span className={s.percentage}>{stat.percentage} %</span>
           </li>
         ))}
       </ul>
@@ -19,9 +26,12 @@ export default function Statistics({ stats, title }) {
 }
 
 Statistics.propTypes = {
-  stats: PropTypes.arrayOf({
-    label: PropTypes.string,
-    percentage: PropTypes.number,
-  }),
-  title: PropTypes.number,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+      id: PropTypes.string,
+    }).isRequired,
+  ),
+  title: PropTypes.string,
 };
