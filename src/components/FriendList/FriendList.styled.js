@@ -33,9 +33,6 @@ export const Status = styled.span`
   border-radius: 100%;
   width: 20px;
   height: 20px;
-  background-color: ${({ statusType }) => {
-    if (statusType) {
-      return 'rgb(0, 131, 0)';
-    } else return 'rgb(255, 0, 0)';
-  }};
+  background-color: ${({ isOnline }) =>
+    isOnline ? 'rgb(0, 131, 0)' : 'rgb(255, 0, 0)'}};
 `;

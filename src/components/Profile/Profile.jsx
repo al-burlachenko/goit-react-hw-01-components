@@ -13,27 +13,28 @@ import {
 } from './Profile.styled';
 
 export default function Profile(props) {
+  const { avatar, username, tag, location, followers, views, likes } = props;
   return (
     <ProfileContatner>
       <Description>
-        <Avatar src={props.avatar} alt="User avatar" />
-        <Name>{props.username}</Name>
-        <Tag>@{props.tag}</Tag>
-        <Location>{props.location}</Location>
+        <Avatar src={avatar} alt="User avatar" />
+        <Name>{username}</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
       </Description>
 
       <Stats>
         <Items>
           <Label>Followers</Label>
-          <Quantity>{props.followers}</Quantity>
+          <Quantity>{followers}</Quantity>
         </Items>
         <Items>
           <Label>Views</Label>
-          <Quantity>{props.views}</Quantity>
+          <Quantity>{views}</Quantity>
         </Items>
         <Items>
           <Label>Likes</Label>
-          <Quantity>{props.likes}</Quantity>
+          <Quantity>{likes}</Quantity>
         </Items>
       </Stats>
     </ProfileContatner>

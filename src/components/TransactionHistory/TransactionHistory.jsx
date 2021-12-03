@@ -18,11 +18,11 @@ export default function TransactionHistory({ items }) {
       </thead>
 
       <tbody>
-        {items.map(item => (
-          <TransactionRow key={item.id}>
-            <TransactionData>{item.type}</TransactionData>
-            <TransactionData>{item.amount}</TransactionData>
-            <TransactionData>{item.currency}</TransactionData>
+        {items.map(({ id, type, amount, currency }) => (
+          <TransactionRow key={id}>
+            <TransactionData>{type}</TransactionData>
+            <TransactionData>{amount}</TransactionData>
+            <TransactionData>{currency}</TransactionData>
           </TransactionRow>
         ))}
       </tbody>
